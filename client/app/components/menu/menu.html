@@ -1,0 +1,24 @@
+<div class="row menuu">
+    <div class="col-xs-12 head">
+        <p>Menu</p>
+    </div>
+    <div ng-repeat="cat in $ctrl.categories">
+        <div class="col-xs-12 sub-head">
+            <p>{{cat.name}}</p>
+        </div>
+        <div ng-repeat="item in cat.items">
+            <div class="col-xs-12 item">
+                <div class="col-xs-4 name">
+                    {{item.name}}
+                </div>
+                <div class="col-xs-6 description">
+                    {{item.desc}}
+                </div>
+                <div class="col-xs-2 right-align price">
+                    ${{item.price}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

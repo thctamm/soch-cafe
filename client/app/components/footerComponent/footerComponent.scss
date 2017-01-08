@@ -1,0 +1,24 @@
+@import "../../common/common";
+
+.foot {
+    
+    background: rgb(32,32,32);
+
+    font: $font-stack;
+    
+    margin-top: 40px;
+    padding: 40px;
+        
+    .title {
+        font-size: 50px;
+        padding-bottom: 20px;
+        color: $dark-latte;
+    }
+
+    .subtitle {
+        font-size: 20px;
+        line-height: 35px;
+        color: $latte;
+    }
+
+}

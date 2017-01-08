@@ -6,6 +6,7 @@ import path     from 'path';
 import sync     from 'run-sequence';
 import rename   from 'gulp-rename';
 import template from 'gulp-template';
+import imageMin from 'gulp-imagemin';
 import fs       from 'fs';
 import yargs    from 'yargs';
 import lodash   from 'lodash';
@@ -18,6 +19,7 @@ import colorsSupported      from 'supports-color';
 import historyApiFallback   from 'connect-history-api-fallback';
 
 let root = 'client';
+let dest = 'dist';
 
 // helper method for resolving paths
 let resolveToApp = (glob = '') => {
@@ -32,6 +34,7 @@ let resolveToComponents = (glob = '') => {
 let paths = {
   js: resolveToComponents('**/*!(.spec.js).js'), // exclude spec files
   scss: resolveToApp('**/*.scss'), // stylesheets
+  img: resolveToApp('img/*.jpg'), // images
   html: [
     resolveToApp('**/*.html'),
     path.join(root, 'index.html')
@@ -42,14 +45,19 @@ let paths = {
   ],
   output: root,
   blankTemplates: path.join(__dirname, 'generator', 'component/**/*.**'),
-  dest: path.join(__dirname, 'dist')
+  dest: path.join(__dirname, dest)
 };
 
+gulp.task('build-images', () => {
+  return gulp.src(paths.img)
+    .pipe(imageMin({optimizationLevel: 5}))
+    .pipe(gulp.dest(paths.dest));
+});
+
 // use webpack.config.js to build modules
-gulp.task('webpack', ['clean'], (cb) => {
+gulp.task('webpack', ['clean', 'build-images'], (cb) => {
   const config = require('./webpack.dist.config');
   config.entry.app = paths.entry;
-
   webpack(config, (err, stats) => {
     if(err)  {
       throw new gutil.PluginError("webpack", err);

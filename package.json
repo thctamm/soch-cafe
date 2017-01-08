@@ -27,6 +27,7 @@
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
     "gulp-template": "^3.0.0",
+    "gulp-imagemin": "~3.0.3",
     "gulp-util": "^3.0.7",
     "html-webpack-plugin": "^1.7.0",
     "karma": "^0.13.22",

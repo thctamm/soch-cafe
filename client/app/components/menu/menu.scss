@@ -1,0 +1,43 @@
+@import "../../common/common";
+
+.menuu {
+    
+    background: rgba(128,128,128, 0.4);
+    border-radius: 20px;
+    margin: 40px 0;
+    padding: 0px 40px;
+    font: $font-stack;
+    color: $latte;
+
+    .head {
+        padding-top: 30px;
+        font-size: 60px;
+        text-align: center;
+        color: $light-latte;
+    }
+
+    .sub-head {
+        font-size: 40px;
+        margin: 30px 0px;
+        border-bottom: 1px solid #ccc; 
+        color: $light-latte;
+    }
+    
+    .item {
+        padding: 20px 0px;
+    }
+
+    .name {
+        font-weight: 500;
+        font-size: 30px;
+    }
+
+    .description {
+        font-size: 20px;
+    }
+
+    .price {
+        font-size: 20px;
+    }
+
+}

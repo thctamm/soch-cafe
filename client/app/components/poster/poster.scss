@@ -1,0 +1,46 @@
+@import "../../common/common";
+
+.poster {
+
+    background: url(/img/gallery2.jpg) no-repeat;
+    background-position-y: -290px;
+    -webkit-backgrounf-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+ 
+    .field {
+        height: 500px;
+        padding: 24px 0px 20px 0px;   
+    }
+
+    .text-box {
+       
+        margin-top: 200px;
+        padding: 15px;
+        text-align: center;
+        background: rgba(0,0,0,0.5);
+        border-radius: 20px;
+        color: $latte;
+        font: $font-stack;
+        
+        .title {
+            font-size: 80px;
+            color: $light-latte;
+        }
+
+        .subtitle {
+            font-size: 30px;
+            line-height: 45px;
+        }
+    }
+
+    .scroll-glyph {
+        color: $latte;
+        font-size: 30px;
+        padding-left: 50%;
+        margin-left: -15px;
+    }
+
+     
+}
